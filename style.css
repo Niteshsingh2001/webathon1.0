@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.cont {
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box {
+    /* height: 100%; */
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    border-radius: 5px;
+    box-shadow: 1px 1px 15px 0 rgba(148, 148, 148, 0.635);
+    padding: 5px;
+}
+
+.logo {
+    text-align: center;
+}
+
+input {
+    height: 30px;
+    border-radius: 5px;
+    border-color: rgba(73, 73, 73, 0.041);
+    width: 60%;
+}
+
+.formcont {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+
+
+}
+
+label {
+    margin: 5px;
+    width: 100px;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+
+}
+
+.btn {
+    padding: 10px;
+    border: none;
+    background-color: rgb(22, 171, 11);
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+
+}
+
+#error {
+    display: none;
+    color: white;
+    background-color: rgba(238, 57, 57, 0.96);
+    text-align: center;
+    height: 50px;
+
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    border-radius: 5px;
+
+}
+
+#msg {
+    color: white;
+
+}
+
+#passlen {
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,155 @@
+<!-- [First Name, Last Name, Email, Confirm Email, Phone No, Password, Confirm Password, Button]
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="error">
+        <p id="msg"></p>
+    </div>
+    <main class="cont">
+
+        <div class="box">
+            <form action="/page2.html">
+                <h3 class="logo">Sign Up</h3>
+
+                <div class="formcont">
+                    <label for="fname">First Name</label>
+                    <input type="text" required class="border border-gray-400 rounded-md" name="fname" id="fname">
+                </div>
+                <div class="formcont">
+                    <label for="lname">Last Name</label>
+                    <input type="text" required name="lname" id="lname">
+                </div>
+
+
+                <div class="formcont">
+                    <label for="email">Email</label>
+                    <input type="email" required id="email">
+                </div>
+                <div class="formcont">
+                    <label for="cmail">Confirm Email</label>
+                    <input type="text" required name="cmail" id="cmail">
+                </div>
+
+
+                <div class="formcont">
+                    <label for="phone">Phone No</label>
+                    <input type="tel" required name="phone" id="phone">
+                </div>
+
+
+                <div>
+                    <div class="formcont">
+
+                        <label for="pass">Password</label>
+                        <input type="password" required name="password" id="pass">
+                    </div>
+                    <p id="passlen">
+                        Length must be greater than 8
+                    </p>
+                </div>
+                <div class="formcont">
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="text" required name="cpassword" id="cpassword">
+                </div>
+                <div class="btnp">
+
+                    <button id="submit" type="submit" class="btn">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+<script>
+    let msgbox = "";
+    let num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+    let fname = document.getElementById("fname");
+    let lname = document.getElementById("lname");
+
+
+
+    let email = document.getElementById("email")
+    let cmail = document.getElementById("cmail")
+
+    let phone = document.getElementById("phone")
+    phone.addEventListener("focusout", () => {
+        if (phone.value.length != 10) {
+            msgbox += "\n Phone No Must be of 10 digit and it must be digit"
+            msg.innerText = msgbox;
+            error.style.display = "flex"
+        }
+        else {
+            msgbox += ""
+            error.style.display = "none"
+        }
+    })
+
+
+    let error = document.getElementById("error")
+    let msg = document.getElementById("msg")
+
+    cmail.addEventListener("focusout", () => {
+        if (email.value != cmail.value) {
+            msgbox += "\n Email Dont match"
+            msg.innerText = msgbox;
+            error.style.display = "flex"
+        }
+        else {
+            msgbox += ""
+            error.style.display = "none"
+        }
+    })
+
+
+
+    let password = document.getElementById("pass");
+    let cpassword = document.getElementById("cpassword");
+    let checkpasslen = document.getElementById("passlen");
+    // Pass check
+
+    password.addEventListener("keypress", (e) => {
+
+        if (password.value.length < 8) {
+            checkpasslen.innerText = "Length must be greater than 8";
+        }
+        else {
+            checkpasslen.style.display = "none"
+        }
+
+    });
+
+    cpassword.addEventListener("focusout", () => {
+        if (password.value != cpassword.value) {
+            msgbox += "\n Password Dont match"
+            msg.innerText = msgbox;
+            error.style.display = "flex"
+        }
+        else {
+            msgbox += ""
+            error.style.display = "none"
+        }
+    })
+
+
+
+
+
+
+
+
+</script>
+
+</html>
